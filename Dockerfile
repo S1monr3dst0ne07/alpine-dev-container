@@ -5,7 +5,7 @@ RUN apk add python3 git make vim
 WORKDIR /root
 
 #config path
-RUN echo "export PATH=$PATH:/opt/" > ~/.bashrc
+ENV PATH "$PATH:/opt/"
 
 #download
 RUN git clone https://github.com/baabnq/kit
