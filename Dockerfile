@@ -15,6 +15,8 @@ RUN cd baabnq/ && chmod +x setupLinux.sh && ./setupLinux.sh
 #install
 RUN mv baabnq/vm.py    /opt/v
 RUN mv baabnq/compi.py /opt/c
+RUN chmod +x /opt/v
+RUN chmod +x /opt/c
 
 SHELL ["/bin/sh"]
 
