@@ -7,16 +7,23 @@ WORKDIR /root
 #config path
 ENV PATH "$PATH:/opt/"
 
-#download
+#download baabnq
 RUN git clone https://github.com/baabnq/kit
 RUN mv kit/ baabnq/
 RUN cd baabnq/ && chmod +x setupLinux.sh && ./setupLinux.sh
 
-#install
+#install baabnq
 RUN mv baabnq/vm.py    /opt/v
 RUN mv baabnq/compi.py /opt/c
 RUN chmod +x /opt/v
 RUN chmod +x /opt/c
+
+#download ext
+RUN cd baabnq/ && git clone https://github.com/baabnq/ext
+
+#copy uploader helper
+COPY upload.sh /opt/upload
+
 
 SHELL ["/bin/sh"]
 
