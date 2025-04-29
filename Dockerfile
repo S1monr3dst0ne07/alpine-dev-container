@@ -1,7 +1,7 @@
 FROM alpine
 
 RUN apk update
-RUN apk add python3 git make vim
+RUN apk add python3 git make vim lftp
 WORKDIR /root
 
 #config path
