@@ -1,5 +1,5 @@
 
-run: build
+run:
 	docker run -it --rm alpine-dev-container /bin/sh
 
 build:
